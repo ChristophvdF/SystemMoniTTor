@@ -1,4 +1,4 @@
-![SystemMoniTTor logo](assets/logo_text.png)
+![SystemMoniTTor logo](https://github.com/ChristophvdF/SystemMoniTTor/raw/master/assets/logo_text.png)
 # SystemMoniTTor
 Application to monitor the state of your computer over MQTT
 
