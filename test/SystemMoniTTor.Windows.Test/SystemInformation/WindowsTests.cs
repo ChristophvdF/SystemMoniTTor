@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+using SystemMoniTTor.Core.Model;
 using SystemMoniTTor.Platform.SystemInformation;
 using Xunit;
 
@@ -19,7 +15,7 @@ namespace SystemMoniTTor.Windows.Test.SystemInformation
         }
 
         [Fact]
-        public void GetUpTime_ValidCall_AnUpTimeGreaterThanZero()
+        public void GetMemoryInformation_ValidCall_AnUpTimeGreaterThanZero()
         {
             // Arrange
 
@@ -41,7 +37,7 @@ namespace SystemMoniTTor.Windows.Test.SystemInformation
             var actual = sut.GetOperationSystem();
 
             // Assert
-            Assert.NotNull(actual);
+            Assert.Equal(OperatingSystems.Windows, actual);
         }
 
         [Fact]
@@ -51,10 +47,12 @@ namespace SystemMoniTTor.Windows.Test.SystemInformation
 
 
             // Act
-            var memory = sut.GetUsedMemory();
+            var memory = sut.GetMemoryInformation();
 
             // Assert
-            Assert.True(memory > 0);
+            Assert.True(memory.Free > 0);
+            Assert.True(memory.Total > 0);
+            Assert.True(memory.Used > 0);
         }
     }
 }

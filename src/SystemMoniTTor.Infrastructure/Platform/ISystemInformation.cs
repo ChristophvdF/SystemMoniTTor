@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using SystemMoniTTor.Core.Model;
 
 namespace SystemMoniTTor.Infrastructure.Platform
 {
@@ -18,12 +19,12 @@ namespace SystemMoniTTor.Infrastructure.Platform
         /// Gets the operation system.
         /// </summary>
         /// <returns>The operation system</returns>
-        OSPlatform GetOperationSystem();
+        OperatingSystems GetOperationSystem();
 
         /// <summary>
         /// Gets the used memory.
         /// </summary>
         /// <returns>Currently used memory</returns>
-        int GetUsedMemory();
+        MemoryMetrics GetMemoryInformation();
     }
 }
