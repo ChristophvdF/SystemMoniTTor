@@ -53,6 +53,7 @@ namespace SystemMoniTTor.Windows.Test.SystemInformation
             Assert.True(memory.Free > 0);
             Assert.True(memory.Total > 0);
             Assert.True(memory.Used > 0);
+            Assert.True(memory.TimeStamp != DateTime.MinValue);
         }
     }
 }

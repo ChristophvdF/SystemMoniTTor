@@ -1,6 +1,6 @@
 ﻿namespace SystemMoniTTor.Core.Model
 {
-    public class MemoryMetrics
+    public class MemoryMetrics : BaseModel
     {
         /// <summary>
         /// Gets or sets the total memory in MB.
