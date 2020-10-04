@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 namespace SystemMoniTTor.Core.Model
 {
@@ -9,14 +8,16 @@ namespace SystemMoniTTor.Core.Model
     public class SystemInformation
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SystemInformation"/> class.
+        /// Initializes a new instance of the <see cref="SystemInformation" /> class.
         /// </summary>
-        /// <param name="oSPlatform">The o s platform.</param>
+        /// <param name="os">The os platform.</param>
         /// <param name="upTime">Up time.</param>
-        public SystemInformation(OSPlatform oSPlatform, TimeSpan upTime)
+        /// <param name="memoryMetrics">The memory metrics.</param>
+        public SystemInformation(OperatingSystems os, TimeSpan upTime, MemoryMetrics memoryMetrics
         {
-            OSPlatform = oSPlatform;
+            OperatingSystem = os;
             UpTime = upTime;
+            MemoryMetrics = memoryMetrics;
         }
 
         /// <summary>
@@ -25,7 +26,7 @@ namespace SystemMoniTTor.Core.Model
         /// <value>
         /// The os platform.
         /// </value>
-        public OSPlatform OSPlatform { get; }
+        public OperatingSystems OperatingSystem { get; }
 
         /// <summary>
         /// Gets up time.
@@ -34,5 +35,13 @@ namespace SystemMoniTTor.Core.Model
         /// Up time.
         /// </value>
         public TimeSpan UpTime { get; }
+
+        /// <summary>
+        /// Gets the memory metrics.
+        /// </summary>
+        /// <value>
+        /// The memory metrics.
+        /// </value>
+        public MemoryMetrics MemoryMetrics { get; }
     }
 }
